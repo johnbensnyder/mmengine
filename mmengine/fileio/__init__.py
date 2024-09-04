@@ -1,7 +1,7 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from .backends import (BaseStorageBackend, HTTPBackend, LmdbBackend,
                        LocalBackend, MemcachedBackend, PetrelBackend,
-                       register_backend)
+                       AWSBackend, register_backend)
 from .file_client import FileClient, HardDiskBackend
 from .handlers import (BaseFileHandler, JsonHandler, PickleHandler,
                        YamlHandler, register_handler)
@@ -23,5 +23,5 @@ __all__ = [
     'join_path', 'list_dir_or_file', 'put', 'put_text', 'remove', 'rmtree',
     'load', 'dump', 'register_handler', 'BaseFileHandler', 'JsonHandler',
     'PickleHandler', 'YamlHandler', 'list_from_file', 'dict_from_file',
-    'register_backend'
+    'register_backend', 'AWSBackend'
 ]

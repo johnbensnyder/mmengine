@@ -6,9 +6,10 @@ from .local_backend import LocalBackend
 from .memcached_backend import MemcachedBackend
 from .petrel_backend import PetrelBackend
 from .registry_utils import backends, prefix_to_backends, register_backend
+from .aws_backend import AWSBackend
 
 __all__ = [
     'BaseStorageBackend', 'LocalBackend', 'HTTPBackend', 'LmdbBackend',
     'MemcachedBackend', 'PetrelBackend', 'register_backend', 'backends',
-    'prefix_to_backends'
+    'prefix_to_backends', 'AWSBackend'
 ]

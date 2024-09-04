@@ -8,6 +8,7 @@ from .lmdb_backend import LmdbBackend
 from .local_backend import LocalBackend
 from .memcached_backend import MemcachedBackend
 from .petrel_backend import PetrelBackend
+from .aws_backend import AWSBackend
 
 backends: dict = {}
 prefix_to_backends: dict = {}
@@ -113,5 +114,6 @@ register_backend('memcached', MemcachedBackend)
 register_backend('lmdb', LmdbBackend)
 # To avoid breaking backward Compatibility, 's3' is also used as a
 # prefix for PetrelBackend
-register_backend('petrel', PetrelBackend, prefixes=['petrel', 's3'])
+register_backend('petrel', PetrelBackend, prefixes=['petrel'])
 register_backend('http', HTTPBackend, prefixes=['http', 'https'])
+register_backend('aws', AWSBackend, prefixes=['s3'])

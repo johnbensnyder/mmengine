@@ -8,7 +8,8 @@ from typing import Any, Generator, Iterator, Optional, Tuple, Union
 from mmengine.logging import print_log
 from mmengine.utils import is_filepath
 from .backends import (BaseStorageBackend, HTTPBackend, LmdbBackend,
-                       LocalBackend, MemcachedBackend, PetrelBackend)
+                       LocalBackend, MemcachedBackend, PetrelBackend,
+                       AWSBackend)
 
 
 class HardDiskBackend(LocalBackend):
@@ -72,10 +73,12 @@ class FileClient:
         'lmdb': LmdbBackend,
         'petrel': PetrelBackend,
         'http': HTTPBackend,
+        'aws': AWSBackend,
+        's3': AWSBackend
     }
 
     _prefix_to_backends: dict = {
-        's3': PetrelBackend,
+        's3': AWSBackend,
         'petrel': PetrelBackend,
         'http': HTTPBackend,
         'https': HTTPBackend,
